@@ -77,3 +77,9 @@ function Q1(arr) {
 ]))
 
 
+function Q2_scoresGreaterThan85() {
+    return users.filter(x => x.scores > 85)
+}
+
+console.log(Q2_scoresGreaterThan85(users));
+
