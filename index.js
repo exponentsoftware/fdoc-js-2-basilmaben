@@ -98,3 +98,13 @@ console.log(Q2_addUser('Basil', 95, ['React, Node, Express'], 23))
 console.log(users)
 
 
+function Q2_addUserSkill(name, skill) {
+    let user = users.filter(x => x.name == name);
+    if(user.length == 0) return false;
+    user[0].skills.push(skill);
+    return true;
+}
+
+console.log(Q2_addUserSkill('Basil', 'HTML'))
+console.log(users)
+
