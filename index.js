@@ -83,3 +83,18 @@ function Q2_scoresGreaterThan85() {
 
 console.log(Q2_scoresGreaterThan85(users));
 
+function Q2_addUser(name='', scores=-1, skills=[], age=-1) {
+    if(users.filter(x => x.name == name).length > 0) return false;
+    users.push({
+        name: name,
+        scores: scores,
+        skills: skills,
+        age: age
+    });
+    return true;
+}
+
+console.log(Q2_addUser('Basil', 95, ['React, Node, Express'], 23))
+console.log(users)
+
+
