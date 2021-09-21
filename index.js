@@ -91,7 +91,7 @@ function Q2_addUser(name='', scores=-1, skills=[], age=-1) {
         skills: skills,
         age: age
     });
-    return true;
+    return 'User added';
 }
 
 console.log(Q2_addUser('Basil', 95, ['React, Node, Express'], 23))
@@ -99,7 +99,7 @@ console.log(users)
 
 
 function Q2_addUserSkill(name, skill) {
-    let user = users.filter(x => x.name == name);
+    let user = users.filter(x => x.name === name);
     if(user.length == 0) return false;
     user[0].skills.push(skill);
     return true;
@@ -108,3 +108,12 @@ function Q2_addUserSkill(name, skill) {
 console.log(Q2_addUserSkill('Basil', 'HTML'))
 console.log(users)
 
+
+function Q2_editUser(name) {
+    let user = users.filter(x => x.name == name);
+    if (user.length == 0) return false;
+    user = user[0];
+    Object.keys(data).forEach(k => user[k] = data[k]);
+    return true;
+       
+}
